@@ -1,29 +1,32 @@
-# GPU Matrix Multiplication Benchmark
+Matrix Multiplication Test
 
-This repository contains code for benchmarking matrix multiplication on a GPU using the CUDA programming model. The benchmark is implemented in Python and uses the PyCUDA library to interface with the GPU.
+This is a simple script to test matrix multiplication performance on CPU and GPU. The script generates two random matrices of size N x N, and computes their product using the dot product function for CPU and a CUDA kernel for GPU.
 
-## Usage
+Requirements
 
-To run the benchmark, simply execute the `matrix_multiplication_benchmark.py` script:
+Python 3.x
+NumPy
+PyCUDA (optional, only needed for GPU test)
 
-python matrix_multiplication_benchmark.py
+Usage
 
-The script generates two random matrices on the GPU, copies them to the device, performs matrix multiplication using a CUDA kernel, and then copies the result back to the host. The script prints the time taken to perform the operation.
+'python matrix_multiplication.py --mode=<cpu/gpu> --size=<matrix_size>'
+The --mode parameter is used to specify the mode of the test (CPU or GPU). The --size parameter is used to specify the size of the matrices (N x N).
 
-By default, the benchmark uses a matrix size of 2048. This can be changed by modifying the `MATRIX_SIZE` constant in the script.
+If the --mode parameter is not specified, the script will prompt the user to choose between CPU and GPU.
 
-## Requirements
+If the --size parameter is not specified, the script will use a default value of 2048.
 
-The benchmark requires the following dependencies:
+Example usage
 
-- Python 3.x
-- NumPy
-- PyCUDA
+'python matrix_multiplication.py --mode=cpu --size=2048'
+This will run the matrix multiplication test on CPU, using matrices of size 2048 x 2048.
 
-## Contributing
+'python matrix_multiplication.py --mode=gpu --size=4096'
+This will run the matrix multiplication test on GPU, using matrices of size 4096 x 4096 (assuming PyCUDA is installed).
 
-If you find a bug or would like to suggest an improvement, please open an issue or submit a pull request.
+Output
+The script will output the time taken to compute the product of the two matrices in seconds.
 
-## License
-
-This code is released under the MIT license. See the LICENSE file for more details.
+License
+This project is licensed under the terms of the MIT license.
