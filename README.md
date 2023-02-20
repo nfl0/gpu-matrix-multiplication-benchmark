@@ -1,32 +1,26 @@
-# Matrix Multiplication Test
+# Matrix Multiplication
 
-This is a simple script to test matrix multiplication performance on CPU and GPU. The script generates two random matrices of size N x N, and computes their product using the dot product function for CPU and a CUDA kernel for GPU.
-
-## Requirements
-
-Python 3.x
-NumPy
-PyCUDA (optional, only needed for GPU test)
+This repository contains a Python script for performing matrix multiplication, using either the CPU or the GPU.
 
 ## Usage
 
-'python matrix_multiplication.py --mode=<cpu/gpu> --size=<matrix_size>'
-The --mode parameter is used to specify the mode of the test (CPU or GPU). The --size parameter is used to specify the size of the matrices (N x N).
+The script accepts the following command-line arguments:
 
-If the --mode parameter is not specified, the script will prompt the user to choose between CPU and GPU.
+- `--mode`: Choose the mode of computation. Valid options are `cpu` and `gpu`. Default is `gpu`.
+- `--size`: Choose the size of the matrices. Default is `2048`.
 
-If the --size parameter is not specified, the script will use a default value of 2048.
+For example, to run the script on the CPU with a matrix size of 4096, use the following command:
 
-## Example usage
+python matrix_multiplication.py --mode=cpu --size=4096
 
-'python matrix_multiplication.py --mode=cpu --size=2048'
-This will run the matrix multiplication test on CPU, using matrices of size 2048 x 2048.
 
-'python matrix_multiplication.py --mode=gpu --size=4096'
-This will run the matrix multiplication test on GPU, using matrices of size 4096 x 4096 (assuming PyCUDA is installed).
+## Requirements
 
-## Output
-The script will output the time taken to compute the product of the two matrices in seconds.
+To run the script on the GPU, you will need to have PyCUDA installed. You can install PyCUDA using pip:
+
+pip install pycuda
+
 
 ## License
-This project is licensed under the terms of the MIT license.
+
+This repository is licensed under the MIT license.
