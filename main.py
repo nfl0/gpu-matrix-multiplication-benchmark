@@ -84,4 +84,4 @@ else:
     c = np.dot(a, b)
 
     end_time = time.time()
-    print(end_time-start_time ," seconds")
+    print(f"Time taken: {end_time - start_time:.6f} seconds")
